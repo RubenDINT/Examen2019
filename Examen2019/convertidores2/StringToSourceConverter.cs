@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace Examen2019
+namespace Examen2019.convertidores2
 {
     class StringToSourceConverter : IValueConverter
     {

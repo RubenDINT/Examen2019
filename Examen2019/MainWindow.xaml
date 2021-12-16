@@ -9,25 +9,21 @@
         mc:Ignorable="d"
         Title="RepasoExamen" Height="450" Width="800">
     <Window.Resources>
-        <convertidores2:StringToSourceConverter x:Key="Hola" ></convertidores2:StringToSourceConverter>
+        <convertidores2:StringToSourceConverter x:Key="StringToSourceConverter" ></convertidores2:StringToSourceConverter>
     </Window.Resources>
-    
-    
-    <DockPanel>
-        <StackPanel DockPanel.Dock="Left" Background="Red" Width="150">
-            
-        </StackPanel>
 
-        <ListBox>
+
+    <DockPanel>
+        <ListBox DockPanel.Dock="Left" Width="150" ItemsSource="{Binding Path=ListaPredicciones}">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel></WrapPanel>
+                    <StackPanel></StackPanel>
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <!-- <Image Source="{Binding Path=Prediccion, Converter={StaticResource }}" -->
+                    <Image Source="{Binding Path=Prediccion, Converter={StaticResource StringToSourceConverter}}" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
